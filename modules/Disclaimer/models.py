@@ -107,14 +107,25 @@ SUPERVISOR = (
 
 	)
 
+# Lista de proveedores para campo choices de class Mantenimiento y 
+# class Profile
 PROVEEDOR = (
-		('VI', 'Viadeza'),
-		('JJ', 'Juan Jesús'),
+		('DH', 'David Hernández'),
+		('EKSA', 'ECCASA'),
+		('ETL', 'ECOTEL'),
 		('FS', 'Franco & Soto'),
 		('FD', 'Freddy'),
-		('MC', 'Macario'),
+		('GICOM', 'Grupo ICOM'),
+		('GIP', 'Grupo IPE'),
+		('GVI', 'Grupo VALBRI'),
+		('GST', 'Grupo SET'),
+		('JAVCRUZ', 'Javier De La Cruz'),
+		('JAVJ', 'Javier Jiménez'),
+		('JJ', 'Juan Jesús'),
+		('MC', 'Macario Hernández'),
 		('MQ', 'Maqueda'),
 		('VK', 'Ve-Ca'),
+		('VI', 'Viadeza'),
 	)
 
 class Mantenimiento(models.Model):
@@ -165,6 +176,8 @@ class Profile(models.Model):
 	es_contrata = models.BooleanField(default=True)
 	contrata_view = models.BooleanField(default=False)
 	mastec_admin = models.BooleanField(default=False)
+	proveedor = models.CharField(choices=PROVEEDOR, max_length=50, null=True, blank=True)
+
 
 	class Meta:
 		permissions = (("contra_view", "Contratista Can View"),
