@@ -13,11 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^enrollment', include('modules.Enrollment.urls', namespace='Enrollment', app_name='Enrollment'), name="Enrollment"),
+    url(r'^disclaimer', include('modules.Disclaimer.urls', namespace='Disclaimer', app_name='Disclaimer'), name="Disclaimer"),
 ]
 
 # Cambia el Título en Django Admin
