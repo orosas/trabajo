@@ -49,9 +49,9 @@
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#about">Enrollment</a></li>
+            <li><a href="#contact">Disclaimer</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -66,7 +66,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login</a></li>
+            <li><a href="#">Login / Salir</a></li>
           </ul>
         </div><!--/.nav-collapse -->
 
@@ -87,13 +87,13 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-6 centrar">
+        <div class="col-md-6 text-center">
           <h2>Enrollment</h2>
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           <p>Información del personal con enrollment en el proyecto de AT&T </p>
           <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-md-6 centrar">
+        <div class="col-md-6 text-center">
           <h2>Disclaimer</h2>
           <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
           <p>Información del proyecto Disclaimer AT&T. </p>
@@ -106,11 +106,11 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Username2</th>
-                  <th>Username3</th>
+                  <th>Site Id</th>
+                  <th>Site Name</th>
+                  <th>Región</th>
+                  <th>Coord. MasTec</th>
+                  <th>CellOwner</th>
                 </tr>
               </thead>
               <tbody>
@@ -148,7 +148,24 @@
             <div class="panel-heading">
               <h3 class="panel-title">Región 7. Guerrero</h3>
             </div>
-            <div class="panel-body">Panel content
+            <div class="panel-body">
+              <p>Total De Sitios: <span class="badge">50</span></p>
+              <h5>
+                <p><span class="label label-success">Iniciados:  10</span></p>
+                <p><span class="label label-warning">Terminados: 3</span></p>
+                <p><span class="label label-info">En Proceso: 5</span></p>
+              </h5>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
             </div>
           </div>
         </div>
@@ -157,25 +174,70 @@
             <div class="panel-heading">
               <h3 class="panel-title">Región 7. Morelos</h3>
             </div>
-            <div class="panel-body">Panel content 2
+            <div class="panel-body">
+              <p>Total De Sitios: <span class="badge">50</span></p>
+              <h5><p><span class="label label-success">Iniciados: </span><span class="badge"> 10</span></p>
+              <p><span class="label label-warning">Terminados: </span><span class="badge">3</span></p>
+              <p><span class="label label-info">En Proceso: </span><span class="badge">5</span></p></h5>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
             </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-6">
-          <div class="panel panel-info">
+          <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Región 8. Tabasco</h3>
             </div>
-            <div class="panel-body">Panel content
+            <div class="panel-body">
+              <p>Total De Sitios: <span class="badge">50</span></p>
+              <p><span class="label label-success">Iniciados: </span><span class="badge"> 10</span></p>
+              <p><span class="label label-warning">Terminados: </span><span class="badge">3</span></p>
+              <p><span class="label label-info">En Proceso: </span><span class="badge">5</span></p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
             </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-6">
-          <div class="panel panel-info">
+          <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Región 8. Yucatán</h3>
             </div>
-            <div class="panel-body">Panel content 2
+            <div class="panel-body">
+              <p>Total De Sitios: <span class="badge">50</span></p>
+              <p><span class="label label-success">Iniciados: </span><span class="badge"> 10</span></p>
+              <p><span class="label label-warning">Terminados: </span><span class="badge">3</span></p>
+              <p><span class="label label-info">En Proceso: </span><span class="badge">5</span></p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
             </div>
           </div>
         </div>
