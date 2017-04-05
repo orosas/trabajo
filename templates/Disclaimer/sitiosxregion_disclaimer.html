@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block 'title'%}<title>MasTec Disclaimer Sitios Región {{region}}</title>{%endblock%}
+
+
+{%block 'content'%}
+
+	<div class="row"><!-- row2 Dashboard style="margin-top: 48px;"-->
+      
+      <ol class="breadcrumb" style="margin-top: 58px;">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li class="active">Guerrero</li>
+      </ol>
+
+      <h1 class="text-center">Proyecto Disclaimer. Sitios De Región {{region}}</h1>
+
+      <div class="table-responsive"><!-- table-responsive -->
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Site Id</th>
+                  <th>Site Name</th>
+                  <th>Región</th>
+                  <th>Coord. MasTec</th>
+                  <th>CellOwner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo2</td>
+                  <td>@mdo3</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat2</td>
+                  <td>@fat3</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                  <td>@twitter2</td>
+                  <td>@twitter3</td>
+                </tr>
+              </tbody>
+            </table>
+      </div><!-- /table-responsive -->
+
+
+  </div><!-- /row2 Dashboard-->
+
+
+
+
+{%endblock%} <!-- Termina bloque content -->

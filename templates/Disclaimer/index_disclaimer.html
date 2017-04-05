@@ -1,0 +1,187 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block 'title'%}<title>MasTec Disclaimer</title>{%endblock%}
+
+
+{%block 'content'%}
+
+	<div class="row"><!-- row2 Dashboard style="margin-top: 48px;"-->
+      
+      <ol class="breadcrumb" style="margin-top: 58px;">
+        <li><a href="#">Inicio</a></li>
+        <li><a class="active">Disclaimer</a></li>
+      </ol>
+
+      <h1 class="text-center">Proyecto Disclaimer</h1>
+
+        <div class="col-sm-12 col-md-4">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Región 7. Guerrero</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                  <a class="btn btn-sm btn-primary" href="{% url 'Disclaimer:sitios_por_region' 'Guerrero' %}">
+                    Asignación Total: <span class="badge">{{sitioxRegion.0}}</span>
+                  </a>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-success">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>  Iniciados: 
+                  <span class="badge">10</span>
+                </button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-warning">
+                  <span class="glyphicon glyphicon-small glyphicon-ok" aria-hidden="true"></span>
+                    Terminados: <span class="badge">3</span></button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-info">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>
+                    En Proceso: <span class="badge">5</span></button>
+              </p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Región 7. Morelos</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                  <a class="btn btn-sm btn-primary" href="{% url 'Disclaimer:sitios_por_region' 'Morelos' %}">
+                    Asignación Total: <span class="badge">{{sitioxRegion.1}}</span>
+                  </a>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-success">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>  Iniciados: 
+                  <span class="badge">10</span>
+                </button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-warning">
+                  <span class="glyphicon glyphicon-small glyphicon-ok" aria-hidden="true"></span>
+                    Terminados: <span class="badge">3</span></button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-info">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>
+                    En Proceso: <span class="badge">5</span></button>
+              </p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Región 8. Tabasco</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                  <a class="btn btn-sm btn-primary" href="{% url 'Disclaimer:sitios_por_region' 'Tabasco' %}">
+                    Asignación Total: <span class="badge">{{sitioxRegion.2}}</span>
+                  </a>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-success">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>  Iniciados: 
+                  <span class="badge">10</span>
+                </button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-warning">
+                  <span class="glyphicon glyphicon-small glyphicon-ok" aria-hidden="true"></span>
+                    Terminados: <span class="badge">3</span></button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-info">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>
+                    En Proceso: <span class="badge">5</span></button>
+              </p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">Región 8. Yucatán</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                  <a class="btn btn-sm btn-primary" href="{% url 'Disclaimer:sitios_por_region' 'Yucatan' %}">
+                    Asignación Total: <span class="badge">{{sitioxRegion.3}}</span>
+                  </a>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-success">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>  Iniciados: 
+                  <span class="badge">10</span>
+                </button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-warning">
+                  <span class="glyphicon glyphicon-small glyphicon-ok" aria-hidden="true"></span>
+                    Terminados: <span class="badge">3</span></button>
+              </p>
+              <p>
+                <button type="button" class="btn btn-xs btn-info">
+                  <span class="glyphicon glyphicon-small glyphicon-cog" aria-hidden="true"></span>
+                    En Proceso: <span class="badge">5</span></button>
+              </p>
+              <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 20%">
+                        <span class="sr-only">20% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 6%">
+                        <span class="sr-only">6% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-info" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /row2 Dashboard-->
+
+
+
+
+{%endblock%} <!-- Termina bloque content -->

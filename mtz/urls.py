@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^enrollment', include('modules.Enrollment.urls', namespace='Enrollment', app_name='Enrollment'), name="Enrollment"),
-    url(r'^disclaimer', include('modules.Disclaimer.urls', namespace='Disclaimer', app_name='Disclaimer'), name="Disclaimer"),
+    url(r'^disclaimer/', include('modules.Disclaimer.urls', namespace='Disclaimer', app_name='Disclaimer'), name="Disclaimer"),
+    url(r'^$', TemplateView.as_view(template_name='base_gral.html'), name="Inicio"),
 ]
 
 # Cambia el Título en Django Admin

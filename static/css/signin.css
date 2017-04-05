@@ -69,4 +69,7 @@ body {
     color: #265a88;
 }
 
-
+.glyphicon-small {
+    font-size: 14px;
+    color: #FFF;
+}
