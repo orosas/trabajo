@@ -9,9 +9,9 @@
 	<div class="row"><!-- row2 Dashboard style="margin-top: 48px;"-->
       
       <ol class="breadcrumb" style="margin-top: 58px;">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Disclaimer</a></li>
-        <li class="active">Guerrero</li>
+        <li><a href="{% url 'Inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'Disclaimer:index-disclaimer' %}">Disclaimer</a></li>
+        <li class="active">{{region}}</li>
       </ol>
 
       <h1 class="text-center">Proyecto Disclaimer. Sitios De Región {{region}}</h1>
@@ -29,38 +29,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo2</td>
-                  <td>@mdo3</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat2</td>
-                  <td>@fat3</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter2</td>
-                  <td>@twitter3</td>
-                </tr>
+                
+                {% for sitio in sitios %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{sitio.idatt_mastec}}</td>
+                    <td>{{sitio.nombre_sitio}}</td>
+                    <td>{{sitio.region}}</td>
+                    <td>{{sitio.coordinador_mastec}}</td>
+                    <td>{{sitio.cellowner}}</td>
+                  </tr>
+                {% endfor %}
+
               </tbody>
             </table>
       </div><!-- /table-responsive -->
 
-
   </div><!-- /row2 Dashboard-->
-
-
 
 
 {%endblock%} <!-- Termina bloque content -->

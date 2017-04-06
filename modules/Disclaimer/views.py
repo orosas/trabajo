@@ -24,7 +24,7 @@ def Index(request):
 	return render(request,'Disclaimer/index_disclaimer.html',{'sitioxRegion': sitioxRegion})
 
 
-def Sitiosxregion(request, region):
+def lista_Sitiosxregion(request, region):
 
 	if region == "Guerrero":
 		coord_mastec='Oscar'
