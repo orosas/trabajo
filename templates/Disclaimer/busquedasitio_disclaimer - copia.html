@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%load static%}
 
-{%block 'title'%}<title>MasTec Disclaimer Sitios Región {{region}}</title>{%endblock%}
+{%block 'title'%}<title>MasTec Disclaimer Búsqueda De Sitio</title>{%endblock%}
 
 
 {%block 'content'%}
@@ -33,7 +33,7 @@
                 {% for sitio in sitios %}
                   <tr>
                     <td>{{forloop.counter}}</td>
-                    <td>{{sitio.pk}} {{sitio.idatt_mastec}}</td>
+                    <td>{{sitio.idatt_mastec}}</td>
                     <td>{{sitio.nombre_sitio}}</td>
                     <td>{{sitio.region}}</td>
                     <td>{{sitio.coordinador_mastec}}</td>
