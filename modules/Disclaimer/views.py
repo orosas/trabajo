@@ -73,17 +73,20 @@ def Busqueda_Sitio(request):
 		if form.is_valid():
 			q = form.cleaned_data['q']
 
-			sitios = Sitio.objects.get(
-				Q(nombre_sitio__contains='q')
+			sitios = Sitio.objects.filter(Q(nombre_sitio__icontains=q)|
+											Q(idatt_mastec__icontains=q)
 				)
 
-			return render(request, 'Disclaimer/index_disclaimer.html', {'sitios':sitios, 'form': form})
+			#print("String recibido: " + q)
+
+			#sitios = Sitio.objects.filter(nombre_sitio__icontains=q)
+
+			for sitio in sitios:
+				print("sitio PK: " + str(sitio.pk))
+			
+			return render(request, 'Disclaimer/sitiosxregion_disclaimer.html', {'sitios':sitios, 'form': form})
 
 			#return HttpResponse("El string recibido es: " + q)
-
-			# Busqueda de cadena en base de datos
-
-
 
 
 		else:
