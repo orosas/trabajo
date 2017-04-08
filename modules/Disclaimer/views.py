@@ -73,21 +73,21 @@ def Busqueda_Sitio(request):
 		if form.is_valid():
 			q = form.cleaned_data['q']
 
-			sitios = Sitio.objects.filter(Q(nombre_sitio__icontains=q)|
-											Q(idatt_mastec__icontains=q)
-				)
+			sitios = Sitio.objects.filter(Q(nombre_sitio__unaccent__icontains=q)|
+											Q(site_id__icontains=q)|
+											Q(id3g__icontains=q)|
+											Q(idgsm__icontains=q)|
+											Q(idlte__icontains=q)|
+											Q(idgsm__icontains=q)|
+											Q(ididen__icontains=q)
+								)
 
 			#print("String recibido: " + q)
-
-			#sitios = Sitio.objects.filter(nombre_sitio__icontains=q)
 
 			for sitio in sitios:
 				print("sitio PK: " + str(sitio.pk))
 			
 			return render(request, 'Disclaimer/sitiosxregion_disclaimer.html', {'sitios':sitios, 'form': form})
-
-			#return HttpResponse("El string recibido es: " + q)
-
 
 		else:
 			elerror = True
@@ -95,3 +95,12 @@ def Busqueda_Sitio(request):
 	else:
 		form = BusquedaForm()
 		return render(request, 'Disclaimer/index_disclaimer.html', {'form': form})
+
+
+
+def Detalle_Sitio(request,pk):
+	sitio = Sitio.objects.get(pk=pk)
+
+	print("sitio NAME: " + str(sitio.nombre_sitio))
+
+	return render(request,'Disclaimer/detallesitio_disclaimer.html',{'sitio':sitio})

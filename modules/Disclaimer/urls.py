@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import Index, lista_Sitiosxregion, Busqueda_Sitio
+from .views import Index, lista_Sitiosxregion, Busqueda_Sitio, Detalle_Sitio
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', Index, name='index-disclaimer'),
     url(r'^region/(?P<region>[\w-]+)/$', lista_Sitiosxregion, name='sitios_por_region'),
     url(r'^busqueda/$', Busqueda_Sitio, name='busqueda_sitio'),
+    url(r'^detallesitio/(?P<pk>\d+)/$', Detalle_Sitio, name='detalle_sitio'),
 ]
