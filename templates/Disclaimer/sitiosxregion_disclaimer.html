@@ -33,7 +33,9 @@
                 {% for sitio in sitios %}
                   <tr>
                     <td>{{forloop.counter}}</td>
-                    <td>{{sitio.pk}} <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.idatt_mastec}}</a></td>
+                    <td>
+                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</a>
+                    </td>
                     <td>{{sitio.nombre_sitio}}</td>
                     <td>{{sitio.region}}</td>
                     <td>{{sitio.coordinador_mastec}}</td>

@@ -153,6 +153,7 @@ class Mantenimiento(models.Model):
 class Volumetrico(models.Model):
 	sitio = models.ForeignKey(Sitio,on_delete=models.CASCADE, related_name='sitio_presupto')
 	volPre_recepcion = models.DateField(null=True, blank=True)
+	volPre_monto = models.DecimalField(max_digits=9, decimal_places=2, blank=True, default=0.0)
 	vol_po_solitada = models.DateField(null=True, blank=True)
 	vol_po_monto = models.DecimalField(max_digits=9, decimal_places=2, blank=True)
 	vol_final_recibido = models.DateField(null=True, blank=True)

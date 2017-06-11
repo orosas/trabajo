@@ -61,7 +61,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0">
               <form class="form-inline navbar-nav" method="post" action="{% url 'Disclaimer:busqueda_sitio' %}">
                 {% csrf_token %}
                 {{ form.as_ul }}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Sitio, Status
+from .models import Sitio, Status, Mantenimiento, Volumetrico
 from django.db.models import Q
 from .forms import BusquedaForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -97,10 +97,13 @@ def Busqueda_Sitio(request):
 		return render(request, 'Disclaimer/index_disclaimer.html', {'form': form})
 
 
-
 def Detalle_Sitio(request,pk):
 	sitio = Sitio.objects.get(pk=pk)
+	print("dentro Detalle_Sitio pk "+pk)
+	status = Status.objects.get(pk=pk)
+	mantenimiento = Mantenimiento.objects.get(pk=pk)
 
 	print("sitio NAME: " + str(sitio.nombre_sitio))
 
-	return render(request,'Disclaimer/detallesitio_disclaimer.html',{'sitio':sitio})
+	return render(request,'Disclaimer/detallesitio_disclaimer.html',{'sitio': sitio, 'status': status, 
+																'mantenimiento': mantenimiento})

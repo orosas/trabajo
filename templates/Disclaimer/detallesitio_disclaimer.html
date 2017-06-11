@@ -11,10 +11,54 @@
       <ol class="breadcrumb" style="margin-top: 58px;">
         <li><a href="{% url 'Inicio' %}">Inicio</a></li>
         <li><a href="{% url 'Disclaimer:index-disclaimer' %}">Disclaimer</a></li>
-        <li class="active">Sitio {{sitio.nombre_sitio}}</li>
+        <li class="active">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</li>
       </ol>
 
-      <h1 class="text-center">Sitio {{sitio.nombre_sitio}}</h1>
+      <h1 class="text-center">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</h1>
+  
+  <div class="table-responsive"><!-- table-responsive -->
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>Región</th>
+                  <th>Latitud</th>
+                  <th>Longitud</th>
+                  <th>CellOwner</th>
+                  <th>Cell Owner Tel</th>
+                  <th>Comentario ATT</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>{{sitio.region}}</td>
+                    <td>
+                      <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank">
+                        {{sitio.lat_decimal}}
+                      </a>
+                    </td>
+                    <td>
+                      <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank">
+                        {{sitio.long_decimal}}
+                      </a>
+                    </td>
+                    <td>{{sitio.cellowner}}</td>
+                    <td>{{sitio.telefono_cellowner}}</td>
+                    <td>{{sitio.comentarios_att}}</td>
+                  </tr>
+              </tbody>
+           </table>
+      </div><!-- /table-responsive -->
+      
+      <p><b>Avance:</b> {{status.avance}}% </p>
+      <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: {{status.avance}}%">
+                        <span class="sr-only">{{status.avance}}% Complete (success)</span>
+                      </div>
+      </div>
+      <p><b>Proveedor:</b> {{mantenimiento.get_proveedor_display}} </p> 
+
+
+      Ver en <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank">Google Maps</a>
 
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -27,8 +71,16 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        Latitud: {{sitio.lat_decimal}}
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <p><b>Ultima Actividad:</b> {{status.ultima_actividad}} </p> 
+        <p><b>Status:</b> {{status.get_status_display}} </p>
+        <p><b>Avance:</b> {{status.avance}}% </p>
+        <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: {{status.avance}}%">
+                        <span class="sr-only">{{status.avance}}% Complete (success)</span>
+                      </div>
+        </div>
+        <p><b>Contratista:</b> XXXXXXX </p>
+        <p><b>Cellowner:</b> Ing. Abarca 5688722</p>
       </div>
     </div>
   </div>
@@ -42,7 +94,13 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <p><b>Semana Programada AT&T:</b> {{status.ultima_actividad}} </p> 
+        <p><b>Fecha Programada AT&T:</b> {{status.get_status_display}} </p>
+        <p><b>Fecha Ejecución:</b> {{status.avance}}% </p>
+        <p><b>Levantado Por:</b> {{status.avance}}% </p>
+        <p><b>Nota:</b> {{status.avance}}% </p>
+        <p><b>Recibido Por MasTec:</b> {{status.avance}}% </p>
+        <p><b>Validado por AT&T:</b> {{status.avance}}% </p>
       </div>
     </div>
   </div>
@@ -56,7 +114,15 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+       <p><b>Proveedor:</b> {{mantenimiento.get_proveedor_display}} </p> 
+        <p><b>Supervisor:</b> {{mantenimiento.get_supervisor_display}} </p>
+        <p><b>Cuadrilla:</b> {{mantenimiento.cuadrilla}}</p>
+        <p><b>Semana Inicio Programado AT&T:</b> {{mantenimiento.cos_sem_att}}% </p>
+        <p><b>Inicio Programado AT&T:</b> {{mantenimiento.cos_programado}}% </p>
+        <p><b>Inicio Real:</b> {{mantenimiento.cos_real}}% </p>
+        <p><b>Semana Fin Programado:</b> {{mantenimiento.cof_sem_att}}% </p>
+        <p><b>Fecha Fin Programado:</b> {{mantenimiento.cof_programado}}% </p>
+        <p><b>Fecha Fin Real:</b> {{mantenimiento.real}}% </p>
       </div>
     </div>
   </div>
