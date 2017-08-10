@@ -14,7 +14,6 @@ class Sitio(models.Model):
 	coordinador_mastec = models.CharField(max_length=50, null=True)
 	ciudad = models.CharField(max_length=50, null=True, blank=True)
 	idatt_mastec = models.CharField(max_length=50, null=True)
-	site_id = models.CharField(max_length=20, null=True, blank=True)
 	id3g = models.CharField(max_length=20, null=True)
 	idgsm = models.CharField(max_length=20, null=True)
 	idlte = models.CharField(max_length=20, null=True)
@@ -91,20 +90,22 @@ class Levantamiento(models.Model):
 		return u"%s" % (self.sitio)
 
 SUPERVISOR = (
-		('OL', 'Oscar López'),
-		('PQ', 'Pablo Quezada'),
-		('FJ', 'Francisco Juárez'),
-		('MS', 'Miguel Salgado'),
-		('LG', 'Luis Gutierrez'),
-		('OM', 'Oscar Marín'),
-		('LD', 'Lino De La Rosa'),
-		('JP', 'Juan Pablo Flores'),
-		('ME', 'Martín Elías'),
-		('JG', 'Jaime García'),
-		('GJ', 'Gerardo Jiménez'),
-		('AB', 'Arturo Bautista'),
+		('ALS', 'Alan Santana'),
 		('AS', 'Antonio Salazar'),
-
+		('AB', 'Arturo Bautista'),
+		('FO', 'Fabián Olan'),
+		('FJ', 'Francisco Juárez'),
+		('GJ', 'Gerardo Jiménez'),
+		('JG', 'Jaime García'),
+		('JP', 'Juan Pablo Flores'),
+		('LG', 'Luis Gutierrez'),
+		('LD', 'Lino De La Rosa'),
+		('ME', 'Martín Elías'),
+		('MS', 'Miguel Salgado'),
+		('OL', 'Oscar López'),
+		('OM', 'Oscar Marín'),
+		('PQ', 'Pablo Quezada'),
+		('PS', 'Pedro Santiago'),
 	)
 
 # Lista de proveedores para campo choices de class Mantenimiento y 
@@ -139,6 +140,8 @@ class Mantenimiento(models.Model):
 	cof_sem_att = models.PositiveSmallIntegerField(null=True, blank=True)
 	cof_programado = models.DateField(null=True, blank=True)
 	cof_real = models.DateField(null=True, blank=True)
+	fech_odk = models.DateField(null=True, blank=True)
+	nota_sitio = models.TextField(null=True, blank=True)
 	creado = models.DateField(auto_now_add=True)
 	usuario = models.ForeignKey(User,on_delete=models.CASCADE, related_name='users_mnt')
 

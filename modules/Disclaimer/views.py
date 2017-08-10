@@ -74,7 +74,6 @@ def Busqueda_Sitio(request):
 			q = form.cleaned_data['q']
 
 			sitios = Sitio.objects.filter(Q(nombre_sitio__unaccent__icontains=q)|
-											Q(site_id__icontains=q)|
 											Q(id3g__icontains=q)|
 											Q(idgsm__icontains=q)|
 											Q(idlte__icontains=q)|

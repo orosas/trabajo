@@ -21,11 +21,12 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Site Id</th>
-                  <th>Site Name</th>
-                  <th>Región</th>
-                  <th>Coord. MasTec</th>
-                  <th>CellOwner</th>
+                  <th>IDATT</th>
+                  <th>ID3G</th>
+                  <th>IDGSM</th>
+                  <th>IDLTE</th>
+                  <th>IDiDEN</th>
+                  <th>SITE NAME</th>
                 </tr>
               </thead>
               <tbody>
@@ -34,12 +35,13 @@
                   <tr>
                     <td>{{forloop.counter}}</td>
                     <td>
-                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</a>
+                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.idatt_mastec}}</a>
                     </td>
-                    <td>{{sitio.nombre_sitio}}</td>
-                    <td>{{sitio.region}}</td>
-                    <td>{{sitio.coordinador_mastec}}</td>
-                    <td>{{sitio.cellowner}}</td>
+                    <td>{{sitio.id3g}}</td>
+                    <td>{{sitio.idgsm}}</td>
+                    <td>{{sitio.idlte}}</td>
+                    <td>{{sitio.ididen}}</td>
+                    <td><a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.nombre_sitio}}</a></td>
                   </tr>
                 {% endfor %}
               </tbody>
