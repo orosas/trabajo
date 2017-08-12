@@ -35,13 +35,45 @@
                   <tr>
                     <td>{{forloop.counter}}</td>
                     <td>
-                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.idatt_mastec}}</a>
+                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">
+                        {% if sitio.idatt_mastec %}
+                          {{sitio.idatt_mastec}}
+                        {% else %}
+                        {% endif %} 
+                      </a>
                     </td>
-                    <td>{{sitio.id3g}}</td>
-                    <td>{{sitio.idgsm}}</td>
-                    <td>{{sitio.idlte}}</td>
-                    <td>{{sitio.ididen}}</td>
-                    <td><a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">{{sitio.nombre_sitio}}</a></td>
+                    <td>
+                        {% if sitio.id3g %}
+                          {{sitio.id3g}}
+                        {% else %}
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if sitio.idgsm %}
+                          {{sitio.idgsm}}
+                        {% else %}
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if sitio.idlte %}
+                          {{sitio.idlte}}
+                        {% else %}
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if sitio.ididen %}
+                          {{sitio.ididen}}
+                        {% else %}
+                        {% endif %} 
+                    </td>
+                    <td>
+                      <a href="{% url 'Disclaimer:detalle_sitio' sitio.pk %}">
+                        {% if sitio.nombre_sitio %}
+                          {{sitio.nombre_sitio}}
+                        {% else %}
+                        {% endif %} 
+                      </a>
+                    </td>
                   </tr>
                 {% endfor %}
               </tbody>

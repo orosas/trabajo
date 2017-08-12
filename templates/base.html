@@ -62,7 +62,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="col-xs-offset-1 col-sm-offset-0 col-md-offset-0">
-              <form class="form-inline navbar-nav" method="post" action="{% url 'Disclaimer:busqueda_sitio' %}">
+              <form class="form-inline navbar-nav" method="post" action="{% url 'Disclaimer:busqueda_sitio' %}" style="padding-top: 10px;">
                 {% csrf_token %}
                 {{ form.as_ul }}
                 <button type="submit" class="btn btn-sm btn-default">Buscar</button>

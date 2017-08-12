@@ -13,19 +13,19 @@ class Sitio(models.Model):
 	telefono_cellowner = models.CharField(max_length=50, null=True, blank=True)
 	coordinador_mastec = models.CharField(max_length=50, null=True)
 	ciudad = models.CharField(max_length=50, null=True, blank=True)
-	idatt_mastec = models.CharField(max_length=50, null=True)
-	id3g = models.CharField(max_length=20, null=True)
-	idgsm = models.CharField(max_length=20, null=True)
-	idlte = models.CharField(max_length=20, null=True)
-	ididen = models.CharField(max_length=20, null=True)
+	idatt_mastec = models.CharField(max_length=50, null=True, blank=True)
+	id3g = models.CharField(max_length=20, null=True, blank=True)
+	idgsm = models.CharField(max_length=20, null=True, blank=True)
+	idlte = models.CharField(max_length=20, null=True, blank=True)
+	ididen = models.CharField(max_length=20, null=True, blank=True)
 	lat_decimal = models.DecimalField(max_digits=9, decimal_places=6, null=True)
 	long_decimal = models.DecimalField(max_digits=9, decimal_places=6, null=True)
 	nombre_sitio = models.CharField(max_length=50)
-	prioridad = models.CharField(max_length=2, null=True)
-	jerarquia = models.CharField(max_length=30, null=True)
-	sitios_dependientes = models.CharField(max_length=20, null=True)
+	prioridad = models.CharField(max_length=2, null=True, blank=True)
+	jerarquia = models.CharField(max_length=30, null=True, blank=True)
+	sitios_dependientes = models.CharField(max_length=20, null=True, blank=True)
 	comentarios_att = models.TextField(null=True, blank=True)
-	cluster = models.CharField(max_length=50, null=True)
+	cluster = models.CharField(max_length=50, null=True, blank=True)
 	problema_acceso = models.TextField(null=True, blank=True)
 	usuario = models.ForeignKey(User,on_delete=models.CASCADE, related_name='user_sitio')
 	actualizado = models.DateField(auto_now=True)
@@ -56,7 +56,7 @@ STATUS = (
 class Status(models.Model):
 	sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name='status')
 	ultima_actividad = models.CharField(choices=ACTIVIDAD, max_length=10)
-	avance = models.PositiveSmallIntegerField(null=True)
+	avance = models.PositiveSmallIntegerField(null=True, blank=True)
 	status = models.CharField(choices=STATUS, max_length=30)
 	creado = models.DateField(auto_now_add=True)
 	usuario = models.ForeignKey(User,on_delete=models.CASCADE, related_name='user_status')
@@ -111,6 +111,8 @@ SUPERVISOR = (
 # Lista de proveedores para campo choices de class Mantenimiento y 
 # class Profile
 PROVEEDOR = (
+		('AP', 'Ancla Proyectos'),
+		('CM', 'Color Machines'),
 		('DH', 'David Hernández'),
 		('EKSA', 'ECCASA'),
 		('ETL', 'ECOTEL'),
@@ -120,6 +122,7 @@ PROVEEDOR = (
 		('GIP', 'Grupo IPE'),
 		('GVI', 'Grupo VALBRI'),
 		('GST', 'Grupo SET'),
+		('IR', 'IRed'),
 		('JAVCRUZ', 'Javier De La Cruz'),
 		('JAVJ', 'Javier Jiménez'),
 		('JJ', 'Juan Jesús'),
@@ -127,6 +130,7 @@ PROVEEDOR = (
 		('MQ', 'Maqueda'),
 		('VK', 'Ve-Ca'),
 		('VI', 'Viadeza'),
+		('IR', 'IRed'),
 	)
 
 class Mantenimiento(models.Model):

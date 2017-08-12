@@ -1,26 +1,71 @@
-{%extends 'base.html'%}
+{%extends '../base.html'%}
 {%load static%}
 
 {%block 'title'%}<title>MasTec Disclaimer Sitio {{sitio.nombre_sitio}} </title>{%endblock%}
 
 
 {%block 'content'%}
-
+detallesitio_disclaimer.html
 	<div class="row"><!-- row2 Dashboard style="margin-top: 48px;"-->
       
       <ol class="breadcrumb" style="margin-top: 58px;">
         <li><a href="{% url 'Inicio' %}">Inicio</a></li>
         <li><a href="{% url 'Disclaimer:index-disclaimer' %}">Disclaimer</a></li>
-        <li class="active">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</li>
+        <li class="active">Sitio 
+          {% if status.idatt_mastec or status.idatt_mastec == "0" %}
+            {{sitio.idatt_mastec}} 
+          {% endif %}
+          {{sitio.nombre_sitio}}
+        </li>
       </ol>
 
-      <h1 class="text-center">{{sitio.idatt_mastec}} {{sitio.nombre_sitio}}</h1>
+      <h1 class="text-center">
+        {% if status.idatt_mastec or status.idatt_mastec == "0" %}
+            {{sitio.idatt_mastec}} 
+          {% endif %}
+           {{sitio.id3g}} {{sitio.nombre_sitio}}</h1>
   
+    <h3 class="text-left"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> ID's</h3>
+      <div class="table-responsive"><!-- table-responsive -->
+            <table class="table table-striped ">
+              <thead>
+                <tr>
+                  <th>IDATT</th>
+                  <th>ID3G</th>
+                  <th>IDGSM</th>
+                  <th>IDLTE</th>
+                  <th>IDiDEN</th>
+                  <th>SITE NAME</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>
+                        {% if status.idatt_mastec or status.idatt_mastec == "0" %}
+                          {{sitio.idatt_mastec}} 
+                        {% endif %}
+                    </td>
+                    <td>{{sitio.id3g}}</td>
+                    <td>{{sitio.idgsm}}</td>
+                    <td>{{sitio.idlte}}</td>
+                    <td>{{sitio.ididen}}</td>
+                    <td>{{sitio.nombre_sitio}}</td>
+                  </tr>
+              </tbody>
+           </table>
+      </div><!-- /table-responsive -->  
+
+
+
+
+
+  <h3 class="text-left"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Datos Generales</h3>
   <div class="table-responsive"><!-- table-responsive -->
             <table class="table table-striped ">
               <thead>
                 <tr>
                   <th>Región</th>
+                  <th>Prioridad</th>
                   <th>Latitud</th>
                   <th>Longitud</th>
                   <th>CellOwner</th>
@@ -31,6 +76,7 @@
               <tbody>
                   <tr>
                     <td>{{sitio.region}}</td>
+                    <td>{{sitio.prioridad}}</td>
                     <td>
                       <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank">
                         {{sitio.lat_decimal}}
@@ -48,8 +94,17 @@
               </tbody>
            </table>
       </div><!-- /table-responsive -->
+
+
+
       
-      <p><b>Avance:</b> {{status.avance}}% </p>
+      <p>
+        {% if status.avance %}
+          <b>Avance:</b> {{status.avance}}% </p>
+        {% else %}
+          <b>Avance:</b> 0 % </p>
+        {% endif %}
+
       <div class="progress">
                       <div class="progress-bar progress-bar-success" style="width: {{status.avance}}%">
                         <span class="sr-only">{{status.avance}}% Complete (success)</span>
@@ -58,7 +113,7 @@
       <p><b>Proveedor:</b> {{mantenimiento.get_proveedor_display}} </p> 
 
 
-      Ver en <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank">Google Maps</a>
+      Ver en <a href="http://maps.google.com/?q={{sitio.lat_decimal}},{{sitio.long_decimal}}" target="_blank"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Google Maps</a>
 
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -72,15 +127,21 @@
     <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
         <p><b>Ultima Actividad:</b> {{status.ultima_actividad}} </p> 
-        <p><b>Status:</b> {{status.get_status_display}} </p>
-        <p><b>Avance:</b> {{status.avance}}% </p>
-        <div class="progress">
-                      <div class="progress-bar progress-bar-success" style="width: {{status.avance}}%">
-                        <span class="sr-only">{{status.avance}}% Complete (success)</span>
-                      </div>
-        </div>
-        <p><b>Contratista:</b> XXXXXXX </p>
-        <p><b>Cellowner:</b> Ing. Abarca 5688722</p>
+        <p><b>Status:</b> 
+            {% if status.get_status_display == 'Cancelado' %}
+
+            {% else %}
+              {{status.get_status_display}}
+            {% endif %}    
+        </p> 
+        <p>
+          {% if status.avance %}
+            <b>Avance:</b> {{status.avance}}%
+          {% else %}
+            <b>Avance:</b> 0 % 
+          {% endif %}
+        </p>
+        <p><b>Contratista:</b> {{mantenimiento.get_proveedor_display}} </p>
       </div>
     </div>
   </div>

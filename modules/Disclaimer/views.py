@@ -104,5 +104,7 @@ def Detalle_Sitio(request,pk):
 
 	print("sitio NAME: " + str(sitio.nombre_sitio))
 
+	form = BusquedaForm()
+
 	return render(request,'Disclaimer/detallesitio_disclaimer.html',{'sitio': sitio, 'status': status, 
-																'mantenimiento': mantenimiento})
+																'mantenimiento': mantenimiento, 'form': form})
